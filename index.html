@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>denis</title>
+	<meta name="theme-color" content="#f5f5f5"/>
+	<script src="/js/js.js"></script>
+	<link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" href="/css/css.css">
+</head>
+<body>
+	<div class="centering">
+		<form id="login-form">
+			<img class="logo" src="/img/logo.svg" alt="logo"/>
+			<div class="header"><h1>Welcome to the Learning Management System</h1><span>Please log in to continue</span></div>
+			<span id="error-msg">&nbsp;</span>
+			<label class="username">
+				<input type="text" name="name" value="" required maxlength="100" placeholder="Username">
+			</label>
+			<label class="password">
+				<input type="password" name="pass" value="" required maxlength="100" placeholder="Password">
+			</label>
+			<label class="checkbox">
+				<input type="checkbox" name="is_remember" value="1">
+				<figure></figure>
+				<span>Remember me</span>
+			</label>
+			<input type="submit" id="login-button" value="Log In"/>
+		</form>
+	</div>
+</body>
+</html>

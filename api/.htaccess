@@ -1,0 +1,28 @@
+
+AddDefaultCharset UTF-8
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /api/
+
+	RewriteRule ^.htaccess$ - [F]
+	RewriteCond %{REQUEST_FILENAME} (.*)\.(txt|json|html)$
+	RewriteRule ^(.*)$ $1 [L,QSA]
+	
+	#========== HTTP ==========
+	RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+	RewriteCond %{HTTPS} on
+	RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+	#========== HTTP ==========
+	
+	#========== HTTPS ==========
+	#RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+	#RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+	#RewriteCond %{HTTPS} !on
+	#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+	#========== HTTPS ==========
+	
+	RewriteRule ^.*$ index.php [L]
+</IfModule>
