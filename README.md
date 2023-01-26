@@ -1,5 +1,7 @@
 # DEMO - API - PHP
 ## Link example: <http://bydenis.com>
+## userName: 1
+## userPass: 1
 ***
 ### Description:
 
